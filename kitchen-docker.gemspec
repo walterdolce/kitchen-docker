@@ -15,11 +15,11 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'kitchen/driver/docker/version'
+require 'kitchen/driver/docker_version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'kitchen-docker'
-  spec.version       = Kitchen::Driver::Docker::VERSION
+  spec.version       = Kitchen::Driver::DOCKER_VERSION
   spec.authors       = ['Walter Dolce', 'Sean Porter']
   spec.email         = %w(walterdolce@gmail.com portertech@gmail.com)
   spec.description   = %q{A Docker Driver for Test Kitchen. This is a derivative work from the original driver.}

@@ -14,8 +14,6 @@
 # limitations under the License.
 module Kitchen
   module Driver
-    module Docker
-      VERSION = '3.0.0'
-    end
+    DOCKER_VERSION = '3.0.0'
   end
 end
