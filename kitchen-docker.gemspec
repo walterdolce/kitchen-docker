@@ -27,15 +27,17 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/walterdolce/kitchen-docker'
   spec.license       = 'Apache 2.0'
   spec.files         = Dir['LICENSE', '*.md', 'lib/**/*']
-  spec.executables   = []
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.executables   = []
   spec.require_paths = ['lib']
 
   spec.add_dependency 'test-kitchen', '1.5.0'
 
   spec.add_development_dependency 'bundler', '1.11.2'
-  spec.add_development_dependency 'rake', '10.5.0'
   spec.add_development_dependency 'cane', '2.6.1'
-  spec.add_development_dependency 'tailor', '1.4.1'
   spec.add_development_dependency 'countloc', '0.4.0'
+  spec.add_development_dependency 'cucumber', '2.3.2'
+  spec.add_development_dependency 'rake', '10.5.0'
+  spec.add_development_dependency 'rspec-expectations', '3.4.0'
+  spec.add_development_dependency 'tailor', '1.4.1'
 end

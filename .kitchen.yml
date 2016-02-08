@@ -65,5 +65,5 @@ suites:
       username: kitchen
       password: kitchen 
       cap_drop:
-      - NET_ADMIN 
-     
+      - NET_ADMIN
+  - name: named-containers
