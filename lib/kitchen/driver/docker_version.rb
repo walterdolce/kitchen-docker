@@ -1,6 +1,5 @@
-# -*- encoding: utf-8 -*-
-#
-# Copyright (C) 2014, Sean Porter
+# Copyright (C) 2016, Walter Dolce
+# Copyright (C) 2014-2016, Sean Porter, original author
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,12 +12,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 module Kitchen
-
   module Driver
-
-    # Version string for Docker Kitchen driver
-    DOCKER_VERSION = "2.3.0"
+    DOCKER_VERSION = '3.0.0'
   end
 end

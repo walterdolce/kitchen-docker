@@ -1,6 +1,6 @@
-# -*- encoding: utf-8 -*-
 #
-# Copyright (C) 2014, Sean Porter
+# Copyright (C) 2016, Walter Dolce
+# Copyright (C) 2014-2016, Sean Porter, original author
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,21 +13,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+#
 require 'kitchen'
 require 'json'
 require 'securerandom'
 require 'uri'
 require 'net/ssh'
-require File.join(File.dirname(__FILE__), 'docker', 'erb')
+require 'kitchen/driver/docker/erb'
 
 module Kitchen
-
   module Driver
-
-    # Docker driver for Kitchen.
-    #
-    # @author Sean Porter <portertech@gmail.com>
     class Docker < Kitchen::Driver::SSHBase
 
       default_config :binary,        'docker'
@@ -301,7 +296,7 @@ module Kitchen
         Array(config[:volumes_from]).each {|container| cmd << " --volumes-from #{container}"}
         Array(config[:links]).each {|link| cmd << " --link #{link}"}
         Array(config[:devices]).each {|device| cmd << " --device #{device}"}
-        cmd << " --name #{config[:instance_name]}" if config[:instance_name]
+        cmd << " --name #{instance.name}" unless config[:skip_container_name]
         cmd << " -P" if config[:publish_all]
         cmd << " -h #{config[:hostname]}" if config[:hostname]
         cmd << " -m #{config[:memory]}" if config[:memory]
